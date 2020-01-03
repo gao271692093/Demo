@@ -1,0 +1,206 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:orientation="vertical"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".EkwContentFragment1">
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:background="@drawable/green"
+        android:layout_weight="2">
+        <ImageView
+            android:id="@+id/imageView"
+            android:layout_width="50dp"
+            android:layout_height="54dp"
+            android:src="@drawable/ico2"
+            android:layout_alignParentLeft="true"
+            android:layout_alignParentBottom="true"
+            android:layout_marginBottom="30dp"
+            android:layout_marginLeft="30dp"
+            android:gravity="center"
+            android:padding="2dp"
+            />
+
+        <TextView
+            android:id="@+id/textView1"
+            android:layout_width="100dp"
+            android:layout_height="25dp"
+            android:layout_toRightOf="@+id/imageView"
+            android:layout_alignBottom="@+id/imageView"
+            android:text="励志学校"
+            android:gravity="center"
+            android:padding="2dp"
+            />
+
+        <TextView
+            android:id="@+id/textView2"
+            android:layout_width="100dp"
+            android:layout_height="25dp"
+            android:layout_toRightOf="@+id/imageView"
+            android:layout_alignTop="@+id/imageView"
+            android:text="曾老师"
+            android:gravity="center"
+            android:padding="2dp"
+            />
+
+        <TextView
+            android:id="@+id/text_flower"
+            android:layout_width="50dp"
+            android:layout_height="30dp"
+            android:text="鲜花"
+            android:layout_alignParentRight="true"
+            android:layout_alignParentBottom="true"
+            android:gravity="center"
+            android:layout_marginBottom="30dp"
+            android:layout_marginRight="30dp"
+            android:padding="2dp"
+            />
+
+        <TextView
+            android:layout_width="50dp"
+            android:layout_height="30dp"
+            android:text="1594"
+            android:layout_above="@id/text_flower"
+            android:layout_alignLeft="@+id/text_flower"
+            android:gravity="center"
+            android:padding="2dp"
+            />
+
+        <TextView
+            android:id="@+id/text_yidou"
+            android:layout_width="50dp"
+            android:layout_height="30dp"
+            android:text="翼豆"
+            android:layout_alignParentBottom="true"
+            android:layout_marginBottom="30dp"
+            android:layout_toLeftOf="@+id/text_flower"
+            android:gravity="center"
+            android:padding="2dp"/>
+
+        <TextView
+            android:layout_width="50dp"
+            android:layout_height="30dp"
+            android:layout_toLeftOf="@+id/text_flower"
+            android:layout_above="@+id/text_yidou"
+            android:layout_alignLeft="@+id/text_yidou"
+            android:gravity="center"
+            android:text="1031"
+            android:padding="2dp"/>
+
+
+    </RelativeLayout>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:orientation="vertical"
+        android:layout_weight="3">
+
+        <RelativeLayout
+            android:id="@+id/relativeLayout1"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_weight="1">
+
+            <TextView
+                android:layout_width="100dp"
+                android:layout_height="30dp"
+                android:text="手机"
+                android:layout_marginLeft="30dp"
+                android:layout_alignParentLeft="true"
+                android:gravity="center_vertical"
+                />
+
+            <TextView
+                android:id="@+id/textView_tel1"
+                android:layout_width="100dp"
+                android:layout_height="30dp"
+                android:text="18829288918"
+                android:layout_marginRight="30dp"
+                android:layout_alignParentRight="true"
+                android:gravity="center_vertical|right"
+                />
+        </RelativeLayout>
+
+        <RelativeLayout
+            android:id="@+id/relativeLayout2"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_weight="1">
+
+            <TextView
+                android:layout_width="100dp"
+                android:layout_height="30dp"
+                android:text="翼课号"
+                android:layout_marginLeft="30dp"
+                android:layout_alignParentLeft="true"
+                android:gravity="center_vertical"
+                />
+
+            <TextView
+                android:layout_width="100dp"
+                android:layout_height="30dp"
+                android:text="10270054"
+                android:layout_marginRight="30dp"
+                android:layout_alignParentRight="true"
+                android:gravity="center_vertical|right"
+                />
+        </RelativeLayout>
+
+        <RelativeLayout
+            android:id="@+id/relativeLayout3"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_weight="1">
+
+            <TextView
+                android:layout_width="100dp"
+                android:layout_height="30dp"
+                android:text="意见反馈"
+                android:gravity="center_vertical"
+                android:layout_marginLeft="30dp"
+                android:layout_alignParentLeft="true"
+                />
+
+            <TextView
+                android:layout_width="100dp"
+                android:layout_height="30dp"
+                android:text=">"
+                android:layout_marginRight="30dp"
+                android:layout_alignParentRight="true"
+                android:gravity="center_vertical|right"
+                />
+        </RelativeLayout>
+
+        <RelativeLayout
+            android:id="@+id/relativeLayout4"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_weight="1">
+
+            <TextView
+                android:id="@+id/textView_tel"
+                android:layout_width="100dp"
+                android:layout_height="30dp"
+                android:text="客服电话"
+                android:gravity="center_vertical"
+                android:layout_marginLeft="30dp"
+                android:layout_alignParentLeft="true"
+                />
+
+            <TextView
+                android:layout_width="100dp"
+                android:layout_height="30dp"
+                android:text="400-013-0081"
+                android:layout_marginRight="30dp"
+                android:layout_alignParentRight="true"
+                android:gravity="center_vertical|right"
+                />
+        </RelativeLayout>
+
+    </LinearLayout>
+
+</LinearLayout>
