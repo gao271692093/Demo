@@ -1,0 +1,59 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:orientation="vertical"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".MainActivity">
+
+    <TextView
+        android:id="@+id/address_access"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:gravity="center_horizontal"
+        android:text="收获地址管理："/>
+
+    <EditText
+        android:id="@+id/address_name"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:hint="请输入姓名："
+        android:layout_below="@+id/address_access"/>
+
+    <EditText
+        android:id="@+id/address_phone"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:hint="请输入电话："
+        android:layout_below="@+id/address_name"/>
+
+    <EditText
+        android:id="@+id/address_prinvince"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:hint="请输入省份和区域："
+        android:layout_below="@+id/address_phone"/>
+
+    <EditText
+        android:id="@+id/address_details"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:hint="请输入详细地址："
+        android:layout_below="@+id/address_prinvince"/>
+
+    <EditText
+        android:id="@+id/address_yb"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:hint="请输入邮编："
+        android:layout_below="@+id/address_details"/>
+
+    <Button
+        android:id="@+id/button"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="提交"
+        android:layout_below="@+id/address_yb" />
+
+</RelativeLayout>

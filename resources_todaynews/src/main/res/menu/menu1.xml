@@ -1,0 +1,7 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android">
+    <item android:id="@+id/copy" android:title="复制"></item>
+    <item android:id="@+id/collect" android:title="收藏"></item>
+    <item android:id="@+id/translate" android:title="翻译"></item>
+    <item android:id="@+id/report" android:title="举报"></item>
+</menu>

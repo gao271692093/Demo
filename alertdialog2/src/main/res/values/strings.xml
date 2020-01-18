@@ -1,0 +1,7 @@
+<resources>
+    <string name="app_name">AlertDialog2</string>
+    <string name="button1">带取消、确定按钮的对话框</string>
+    <string name="button2">带列表的对话框</string>
+    <string name="button3">带单选列表项的对话框</string>
+    <string name="button4">带多选列表项的对话框</string>
+</resources>

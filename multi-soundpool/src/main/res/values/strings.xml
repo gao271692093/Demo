@@ -1,0 +1,7 @@
+<resources>
+    <string name="app_name">Multi-SoundPool</string>
+    <string-array name="sound_pool">
+        <item>布谷鸟叫声</item>
+        <item>风铃声</item>
+    </string-array>
+</resources>

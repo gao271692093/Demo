@@ -1,0 +1,13 @@
+<resources>
+    <string name="app_name">ResourcesTest</string>
+    <string name="testString">如果你有使命，它会让你更专注</string>
+    <string name="textView1">微信</string>
+    <string name="textView2">QQ</string>
+    <string name="textView3">通讯录</string>
+    <string name="textView4">时钟</string>
+    <string name="textView5">音乐</string>
+    <string name="textView6">互联网</string>
+    <string name="textView7">邮件</string>
+    <string name="textView8">备忘录</string>
+    <string name="textView9">相机</string>
+</resources>

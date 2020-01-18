@@ -1,0 +1,125 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:orientation="vertical"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".MainActivity">
+
+    <!--
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        android:layout_weight="1"
+        >
+
+        <TextView
+            android:id="@+id/textView1"
+            android:layout_width="0dp"
+            android:layout_height="120dp"
+            android:background="@drawable/red_circle"
+            android:layout_margin="5dp"
+            android:gravity="center"
+            android:textSize="25sp"
+            android:layout_weight="1"/>
+
+        <TextView
+            android:id="@+id/textView2"
+            android:layout_width="0dp"
+            android:layout_height="120dp"
+            android:background="@drawable/red_circle"
+            android:layout_margin="5dp"
+            android:gravity="center"
+            android:textSize="25sp"
+            android:layout_weight="1"/>
+
+        <TextView
+            android:id="@+id/textView3"
+            android:layout_width="0dp"
+            android:layout_height="120dp"
+            android:background="@drawable/red_circle"
+            android:layout_margin="5dp"
+            android:gravity="center"
+            android:textSize="25sp"
+            android:layout_weight="1"/>
+
+        <TextView
+            android:id="@+id/textView4"
+            android:layout_width="0dp"
+            android:layout_height="120dp"
+            android:background="@drawable/red_circle"
+            android:layout_margin="5dp"
+            android:gravity="center"
+            android:textSize="25sp"
+            android:layout_weight="1"/>
+
+        <TextView
+            android:id="@+id/textView5"
+            android:layout_width="0dp"
+            android:layout_height="120dp"
+            android:background="@drawable/red_circle"
+            android:layout_margin="5dp"
+            android:gravity="center"
+            android:textSize="25sp"
+            android:layout_weight="1"/>
+
+        <TextView
+            android:id="@+id/textView6"
+            android:layout_width="0dp"
+            android:layout_height="120dp"
+            android:background="@drawable/red_circle"
+            android:layout_margin="5dp"
+            android:gravity="center"
+            android:textSize="25sp"
+            android:layout_weight="1"/>
+
+        <TextView
+            android:id="@+id/textView7"
+            android:layout_width="0dp"
+            android:layout_height="120dp"
+            android:background="@drawable/blue_circle"
+            android:layout_margin="5dp"
+            android:gravity="center"
+            android:textSize="25sp"
+            android:layout_weight="1"/>
+
+    </LinearLayout>
+
+    -->
+
+    <androidx.recyclerview.widget.RecyclerView
+        android:id="@+id/recyclerView"
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:layout_weight="1"/>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="40dp"
+        android:background="@drawable/green"
+        android:orientation="horizontal"
+        >
+
+        <Button
+            android:id="@+id/select_random"
+            android:layout_width="0dp"
+            android:layout_height="30dp"
+            android:layout_gravity="bottom"
+            android:layout_weight="1"
+            android:background="@drawable/one"
+            android:text="机选一注"/>
+
+        <Button
+            android:id="@+id/select_random_five"
+            android:layout_width="0dp"
+            android:layout_height="35dp"
+            android:layout_gravity="bottom"
+            android:layout_weight="1"
+            android:background="@drawable/five"
+            android:text="机选五注"/>
+    </LinearLayout>
+
+</LinearLayout>

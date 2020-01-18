@@ -31,7 +31,7 @@ public class EkwContentFragment1 extends Fragment {
         messages = getResources().getStringArray(R.array.listitem);
         itemList = new ArrayList<>();
         initItems();
-        ItemAdapter itemAdapter = new ItemAdapter(getContext(), R.layout.item_layout, itemList);
+        ItemAdapter itemAdapter = new ItemAdapter(getActivity(), R.layout.item_layout, itemList);
 //        RecyclerView recyclerView = view.findViewById(R.id.recyclerView);
 //        ItemsAdapter itemsAdapter = new ItemsAdapter(itemList);
 //        itemsAdapter.setOnItemClickListener(new ItemsAdapter.OnItemClickListener() {

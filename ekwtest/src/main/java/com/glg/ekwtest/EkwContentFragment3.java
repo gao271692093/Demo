@@ -33,7 +33,7 @@ public class EkwContentFragment3 extends Fragment {
         itemsAdapter.setOnItemClickListener(new ItemsAdapter.OnItemClickListener() {
             @Override
             public void onClick(int position) {
-                Toast.makeText(getContext(), messages[position], Toast.LENGTH_SHORT).show();
+                Toast.makeText(getActivity(), messages[position], Toast.LENGTH_SHORT).show();
             }
 
             @Override
@@ -42,7 +42,7 @@ public class EkwContentFragment3 extends Fragment {
             }
         });
         RecyclerView recyclerView = view.findViewById(R.id.recyclerView);
-        LinearLayoutManager linearLayoutManager = new LinearLayoutManager(getContext());
+        LinearLayoutManager linearLayoutManager = new LinearLayoutManager(getActivity());
         linearLayoutManager.setOrientation(LinearLayoutManager.VERTICAL);
         recyclerView.setLayoutManager(linearLayoutManager);
         recyclerView.setAdapter(itemsAdapter);

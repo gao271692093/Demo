@@ -1,0 +1,26 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <integer-array name="bgcolor">
+        <item>0xBBE24A83</item>
+        <item>0xBB318AD6</item>
+        <item>0xBBD73943</item>
+        <item>0xBBE69A08</item>
+        <item>0xBBBD9663</item>
+        <item>0xBBD45ABC</item>
+        <item>0xBB4AA6D6</item>
+        <item>0xBB8064D2</item>
+        <item>0xBBF7A81E</item>
+    </integer-array>
+
+    <string-array name="word">
+        <item>微信</item>
+        <item>QQ</item>
+        <item>時鐘</item>
+        <item>備忘錄</item>
+        <item>電話簿</item>
+        <item>貪吃蛇</item>
+        <item>支付寶</item>
+        <item>Xmind</item>
+        <item>日曆</item>
+    </string-array>
+</resources>

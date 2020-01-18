@@ -1,0 +1,57 @@
+<?xml version="1.0" encoding="utf-8"?>
+<paths xmlns:android="http://schemas.android.com/apk/res/android">
+    <files-path name="files-path" path="/." />
+    <cache-path name="cache-path" path="/." />
+    <external-path name="external-path" path="/." />
+    <external-files-path name="external-files-path" path="/." />
+    <external-cache-path name="external-cache-path" path="/." />
+</paths>
+
+<!--
+    1.在AndroidMainfest.xml文件中声明FileProvider
+<provider
+      android:name="android.support.v4.content.FileProvider"
+      android:authorities="com.readboy.lee.AppUpdate.fileprovider"
+      android:exported="false"
+      android:grantUriPermissions="true">
+      <meta-data
+           android:name="android.support.FILE_PROVIDER_PATHS"
+           android:resource="@xml/file_paths" />
+</provider>
+注意：android:authorities的值，最好设为包名+“fileprovider”，如果有两个应用都注册了同样的FileProvider，是会报错的。
+
+2.添加资源文件
+在AndroidMainfest.xml中声明的FileProvider中android:resource的值对应的文件需要我们自己添加，在res文件夹下创建一个xml文件夹，并创建file_paths.xml文件。如果已经有xml文件夹，则直接创建file_paths.xml文件即可。
+
+<?xml version="1.0" encoding="utf-8"?>
+<paths xmlns:android="http://schemas.android.com/apk/res/android">
+    <files-path name="files-path" path="/." />
+    <cache-path name="cache-path" path="/." />
+    <external-path name="external-path" path="/." />
+    <external-files-path name="external-files-path" path="/." />
+    <external-cache-path name="external-cache-path" path="/." />
+</paths>
+上面的就是file_paths.xml里面的内容。
+paths里面的界面分别代表：
+
+<files-path/>代表context.getFileDir()
+<cache-path/>代表context.getCacheDir()
+<external-path/>代表Environment.getExternalStorageDirectory()
+<external-files-path/>代表context.getExternalFilesDirs()
+<external-cache-path/>代表context.getExternalCacheDirs()
+path="/."表示的是当前目录下的所有目录。
+注意：如果你选择吧这些选项全部都加到资源文件中，那么这些条目的name属性值要互不相同。
+声明之后，代码中就可以使用所声明的当前文件夹以及其子文件夹。
+3.在代码中使用FileProvider
+        Intent intent = new Intent(Intent.ACTION_VIEW);
+        intent.addFlags(Intent.FLAG_ACTIVITY_NEW_TASK);
+        if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.N) {
+            Uri uri = FileProvider.getUriForFile(context,"com.readboy.lee.AppUpdate.fileprovider",new File(path));
+            intent.setDataAndType(uri,"application/vnd.android.package-archive");
+            intent.addFlags(Intent.FLAG_GRANT_READ_URI_PERMISSION);
+        } else {
+            intent.setDataAndType(Uri.parse("file://" + path),"application/vnd.android.package-archive");
+        }
+        context.startActivity(intent);
+当SDK大于等于7.0时，使用FileProvider获取Uri值，然后再传递出去。
+-->
