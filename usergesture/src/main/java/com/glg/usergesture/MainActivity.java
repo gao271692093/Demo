@@ -54,6 +54,7 @@ public class MainActivity extends Activity implements GestureOverlayView.OnGestu
             editText.setText(gestures.get(index).name);
         } else {
             editText.setText(editText.getText().toString() + gestures.get(index).name);
+            editText.setSelection(editText.getText().length());
         }
 
     }
