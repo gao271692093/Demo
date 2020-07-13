@@ -9,7 +9,8 @@ package com.glg.startforresulttest
 //如果想在主构造函数中进行一些逻辑的编写，可以在类中添加init{}，在init中进行想要的各种逻辑编写
 //例如：class Student(val sno : String, val grade : Int) : Person() {init {println(“sno is " + sno)  println("grade is " + grade)}}
 class Student(val sno: String, val grade: Int, name : String, age : Int):Person(name, age) {
-    init {println("sno is " + sno)
+    init {
+        println("sno is " + sno)
         println("grade is " + grade)
     }
     //kotlin规定，当一个类既有主构造函数又有次构造函数时，所有的次构造函数都必须调用主构造函数（包括间接调用）。
