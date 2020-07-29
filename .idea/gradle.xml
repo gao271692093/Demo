@@ -34,7 +34,6 @@
             <option value="$PROJECT_DIR$/ekwtest" />
             <option value="$PROJECT_DIR$/eventtest" />
             <option value="$PROJECT_DIR$/filepersistencetest" />
-            <option value="$PROJECT_DIR$/forgetpwd" />
             <option value="$PROJECT_DIR$/fragmentbestpractice" />
             <option value="$PROJECT_DIR$/fragmenttest" />
             <option value="$PROJECT_DIR$/fragmenttest2" />
@@ -42,6 +41,8 @@
             <option value="$PROJECT_DIR$/gohome" />
             <option value="$PROJECT_DIR$/goodluck" />
             <option value="$PROJECT_DIR$/handlertest1" />
+            <option value="$PROJECT_DIR$/headerintoplist" />
+            <option value="$PROJECT_DIR$/headerintoplist1" />
             <option value="$PROJECT_DIR$/hefengweathertest" />
             <option value="$PROJECT_DIR$/intenttest" />
             <option value="$PROJECT_DIR$/lbstest" />
@@ -57,10 +58,10 @@
             <option value="$PROJECT_DIR$/multimedia-surfaceview" />
             <option value="$PROJECT_DIR$/multimedia-takephotoes" />
             <option value="$PROJECT_DIR$/multimedia-videoview" />
+            <option value="$PROJECT_DIR$/nestedscrollingtest" />
             <option value="$PROJECT_DIR$/networktest" />
             <option value="$PROJECT_DIR$/notificationtest" />
             <option value="$PROJECT_DIR$/notificationtest1" />
-            <option value="$PROJECT_DIR$/onclickandontouch" />
             <option value="$PROJECT_DIR$/paint-alpha" />
             <option value="$PROJECT_DIR$/paint-animfairy" />
             <option value="$PROJECT_DIR$/paint-bitmap" />
@@ -83,6 +84,7 @@
             <option value="$PROJECT_DIR$/scrollview" />
             <option value="$PROJECT_DIR$/seepicture" />
             <option value="$PROJECT_DIR$/selectico" />
+            <option value="$PROJECT_DIR$/selectphotodemo" />
             <option value="$PROJECT_DIR$/sendobjecttest-parcelable" />
             <option value="$PROJECT_DIR$/sendobjecttest-serializable" />
             <option value="$PROJECT_DIR$/sensortest1" />
@@ -96,6 +98,7 @@
             <option value="$PROJECT_DIR$/servicedemo03" />
             <option value="$PROJECT_DIR$/servicedemo04" />
             <option value="$PROJECT_DIR$/sharedpreferences" />
+            <option value="$PROJECT_DIR$/smartrefreshtest" />
             <option value="$PROJECT_DIR$/spinner" />
             <option value="$PROJECT_DIR$/sqlite-dictionary" />
             <option value="$PROJECT_DIR$/sqliteopenhelper" />
