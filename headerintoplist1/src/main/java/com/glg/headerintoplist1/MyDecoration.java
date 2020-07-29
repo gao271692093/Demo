@@ -83,7 +83,6 @@ class MyDecoration extends RecyclerView.ItemDecoration {
         boolean flag = false;
         if ((pos + 1) < groupList.size()) {
             if (null != tag && !tag.equals(groupList.get(pos + 1).getGroupName())) {
-                Log.d("zxt", "onDrawOver() called with: c = [" + child.getTop());
                 if (child.getHeight() + child.getTop() < titleHeight) {
                     c.save();
                     flag = true;
