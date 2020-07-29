@@ -17,6 +17,8 @@ fun main() {
     val value = largerNumber(37, 40)
     println("larger number is " + value)
 
+    //android中强制类型转换使用as关键字
+
 //    var p = Person()
 //    p.name = "Jack"
 //    p.age = 19
