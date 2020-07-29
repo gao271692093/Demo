@@ -34,6 +34,7 @@
             <option value="$PROJECT_DIR$/ekwtest" />
             <option value="$PROJECT_DIR$/eventtest" />
             <option value="$PROJECT_DIR$/filepersistencetest" />
+            <option value="$PROJECT_DIR$/forgetpwd" />
             <option value="$PROJECT_DIR$/fragmentbestpractice" />
             <option value="$PROJECT_DIR$/fragmenttest" />
             <option value="$PROJECT_DIR$/fragmenttest2" />
@@ -58,10 +59,12 @@
             <option value="$PROJECT_DIR$/multimedia-surfaceview" />
             <option value="$PROJECT_DIR$/multimedia-takephotoes" />
             <option value="$PROJECT_DIR$/multimedia-videoview" />
+            <option value="$PROJECT_DIR$/myapplication" />
             <option value="$PROJECT_DIR$/nestedscrollingtest" />
             <option value="$PROJECT_DIR$/networktest" />
             <option value="$PROJECT_DIR$/notificationtest" />
             <option value="$PROJECT_DIR$/notificationtest1" />
+            <option value="$PROJECT_DIR$/onclickandontouch" />
             <option value="$PROJECT_DIR$/paint-alpha" />
             <option value="$PROJECT_DIR$/paint-animfairy" />
             <option value="$PROJECT_DIR$/paint-bitmap" />
