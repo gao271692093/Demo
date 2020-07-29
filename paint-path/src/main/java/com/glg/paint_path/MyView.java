@@ -23,6 +23,6 @@ public class MyView extends View {
         //canvas.drawPath(path, paint);
 
         paint.setTextSize(30);
-        canvas.drawTextOnPath("活着就是为了改变世界", path, 90, -20, paint);//hOffset : 与路径起始点的水平偏移距离   vOffset : 与路径中心的垂直偏移量
+        canvas.drawTextOnPath("活着就是为了改变世界", path, 90, -20, paint);
     }
 }

@@ -23,7 +23,7 @@ public class FruitFragment extends Fragment {
         initFruits();
         RecyclerView recyclerView = view.findViewById(R.id.recycler_View);
         LinearLayoutManager layoutManager = new LinearLayoutManager(getActivity());
-        layoutManager.setOrientation(LinearLayoutManager.VERTICAL);
+        layoutManager.setOrientation(LinearLayoutManager.HORIZONTAL);
         recyclerView.setLayoutManager(layoutManager);
         FruitAdapter adapter =  new FruitAdapter(fruitList);
         recyclerView.setAdapter(adapter);

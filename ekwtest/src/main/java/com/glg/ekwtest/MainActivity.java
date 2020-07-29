@@ -1,7 +1,5 @@
 package com.glg.ekwtest;
 
-import androidx.annotation.Nullable;
-import androidx.annotation.RequiresApi;
 import androidx.appcompat.app.AlertDialog;
 import androidx.appcompat.app.AppCompatActivity;
 
@@ -13,53 +11,31 @@ import android.app.FragmentTransaction;
 import android.content.Context;
 import android.content.DialogInterface;
 import android.content.Intent;
-import android.graphics.Bitmap;
-import android.graphics.BitmapFactory;
-import android.net.Uri;
-import android.os.Build;
 import android.os.Bundle;
-import android.os.Environment;
-import android.os.StrictMode;
 import android.view.KeyEvent;
 import android.view.View;
 import android.widget.Button;
-import android.widget.ImageView;
 import android.widget.LinearLayout;
 import android.widget.TextView;
 import android.widget.Toast;
 
-import java.io.File;
-import java.io.IOException;
-
 public class MainActivity extends AppCompatActivity {
 
-    //private Fragment[] fragments;
-
-    private Fragment fragment1 = new EkwContentFragment1();
-    private Fragment fragment2 = new EkwContentFragment2();
+    private Fragment fragment1;
+    private Fragment fragment2;
     private long exitTime = 0;
 
-    @RequiresApi(api = Build.VERSION_CODES.JELLY_BEAN_MR2)
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
 
-        //拍照问题
-        StrictMode.VmPolicy.Builder builder = new StrictMode.VmPolicy.Builder();
-        StrictMode.setVmPolicy(builder.build());
-        builder.detectFileUriExposure();
-
         getSupportActionBar().hide();
         final FragmentManager fragmentManager = getFragmentManager();
-        FragmentTransaction fragmentTransaction = fragmentManager.beginTransaction();
-        fragmentTransaction.add(R.id.frameLayout, fragment1).commit();
         final Button button1 = findViewById(R.id.button1);
         final Button button2 = findViewById(R.id.button2);
         final Button button3 = findViewById(R.id.button3);
         button1.setBackgroundColor(getResources().getColor(R.color.background));
-        button2.setBackgroundColor(getResources().getColor(R.color.nul));
-        button3.setBackgroundColor(getResources().getColor(R.color.nul));
         button1.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
@@ -70,12 +46,7 @@ public class MainActivity extends AppCompatActivity {
                     fragment1 = new EkwContentFragment3();
                 }
                 FragmentTransaction fragmentTransaction = fragmentManager.beginTransaction();
-//                if(!fragment2.isHidden()) {
-//                    fragmentTransaction.hide(fragment2);
-//                }
-//                fragmentTransaction.show(fragment1);
-//                fragmentTransaction.commit();
-                fragmentTransaction.replace(R.id.frameLayout, fragment1);
+                fragmentTransaction.replace(R.id.fragment2, fragment1);
                 fragmentTransaction.commit();
             }
         });
@@ -89,12 +60,7 @@ public class MainActivity extends AppCompatActivity {
                     fragment2 = new EkwContentFragment2();
                 }
                 FragmentTransaction fragmentTransaction = fragmentManager.beginTransaction();
-//                if(!fragment1.isHidden()) {
-//                    fragmentTransaction.hide(fragment1);
-//                }
-//                fragmentTransaction.show(fragment2);
-//                fragmentTransaction.commit();
-                fragmentTransaction.replace(R.id.frameLayout, fragment2);
+                fragmentTransaction.replace(R.id.fragment2, fragment2);
                 fragmentTransaction.commit();
             }
         });
