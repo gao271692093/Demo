@@ -9,16 +9,22 @@
 
     <fragment
         android:id="@+id/fragment1"
-        android:layout_width="20dp"
+        android:layout_width="0dp"
         android:layout_height="match_parent"
         android:layout_weight="1"
         android:name="com.glg.ekwtest.EkwTitleFragment" />
 
-    <fragment
-        android:id="@+id/fragment2"
-        android:layout_width="80dp"
+    <FrameLayout
+        android:id="@+id/frameLayout"
+        android:layout_width="0dp"
         android:layout_height="match_parent"
-        android:name="com.glg.ekwtest.EkwContentFragment3"
         android:layout_weight="4"/>
+
+<!--    <fragment-->
+<!--        android:id="@+id/fragment2"-->
+<!--        android:layout_width="80dp"-->
+<!--        android:layout_height="match_parent"-->
+<!--        android:name="com.glg.ekwtest.EkwContentFragment1"-->
+<!--        android:layout_weight="4"/>-->
 
 </LinearLayout>

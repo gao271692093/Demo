@@ -11,18 +11,42 @@
         android:layout_height="0dp"
         android:background="@drawable/green"
         android:layout_weight="2">
-        <ImageView
+
+        <RelativeLayout
             android:id="@+id/imageView"
             android:layout_width="50dp"
             android:layout_height="54dp"
-            android:src="@drawable/ico2"
             android:layout_alignParentLeft="true"
             android:layout_alignParentBottom="true"
             android:layout_marginBottom="30dp"
             android:layout_marginLeft="30dp"
             android:gravity="center"
-            android:padding="2dp"
-            />
+            android:padding="2dp">
+
+            <com.glg.ekwtest.FacePhoto
+                android:id="@+id/facePhoto"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"/>
+
+<!--            <ImageView-->
+<!--                android:id="@+id/image_true"-->
+<!--                android:layout_width="match_parent"-->
+<!--                android:layout_height="match_parent"-->
+<!--                android:src="@drawable/ico2"/>-->
+
+        </RelativeLayout>
+<!--        <ImageView-->
+<!--            android:id="@+id/imageView"-->
+<!--            android:layout_width="50dp"-->
+<!--            android:layout_height="54dp"-->
+<!--            android:src="@drawable/ico2"-->
+<!--            android:layout_alignParentLeft="true"-->
+<!--            android:layout_alignParentBottom="true"-->
+<!--            android:layout_marginBottom="30dp"-->
+<!--            android:layout_marginLeft="30dp"-->
+<!--            android:gravity="center"-->
+<!--            android:padding="2dp"-->
+<!--            />-->
 
         <TextView
             android:id="@+id/textView1"
