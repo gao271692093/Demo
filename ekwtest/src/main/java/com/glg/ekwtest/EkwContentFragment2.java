@@ -101,9 +101,18 @@ public class EkwContentFragment2 extends Fragment {
                         }
                         if(items[which].equals("从相册获取")) {
                             Intent intentFromGallery = new Intent();
-                            intentFromGallery.setType("image/*"); // 设置文件类型
-                            intentFromGallery
-                                    .setAction(Intent.ACTION_GET_CONTENT);
+                            if (Build.VERSION.SDK_INT < 19) {
+                                intentFromGallery = new Intent(
+                                        Intent.ACTION_GET_CONTENT);
+                                intentFromGallery.setType("image/*");
+                                intentFromGallery.setAction(Intent.ACTION_GET_CONTENT);
+                            } else {
+
+                                intentFromGallery = new Intent(
+                                        Intent.ACTION_PICK,
+                                        android.provider.MediaStore.Images.Media.EXTERNAL_CONTENT_URI);
+
+                            }
                             startActivityForResult(intentFromGallery,
                                     IMAGE_REQUEST_CODE);
                             //startActivityForResult(new Intent(Intent.ACTION_PICK).setType("image/*"), 0x11);
@@ -291,10 +300,22 @@ public class EkwContentFragment2 extends Fragment {
         // aspectX aspectY 是宽高的比例
         intent.putExtra("aspectX", 1);
         intent.putExtra("aspectY", 1);
+
+        //获取屏幕信息
+//        DisplayMetrics displayMetrics = new DisplayMetrics();
+//        getWindowManager().getDefaultDisplay().getMetrics(displayMetrics);
+//        int screenWidth = displayMetrics.widthPixels;
+//        int screenHeight = displayMetrics.heightPixels;
+
         // outputX outputY 是裁剪图片宽高
-        intent.putExtra("outputX", 320);
-        intent.putExtra("outputY", 320);
+        intent.putExtra("outputX", 140);
+        intent.putExtra("outputY", 140);
         intent.putExtra("return-data", true);
+
+        //解决图片无法加载的问题
+        intent.addFlags(Intent.FLAG_GRANT_READ_URI_PERMISSION);
+        intent.addFlags(Intent.FLAG_GRANT_WRITE_URI_PERMISSION);
+
         startActivityForResult(intent, RESULT_REQUEST_CODE);
     }
 

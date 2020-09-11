@@ -8,8 +8,19 @@ import android.content.Intent;
 import android.content.pm.PackageManager;
 import android.net.Uri;
 import android.os.Bundle;
+import android.view.View;
 import android.webkit.WebView;
 import android.webkit.WebViewClient;
+import android.widget.TextView;
+import android.widget.Toast;
+
+import com.ekwing.http.common.Config;
+import com.ekwing.http.common.HttpProxy;
+import com.ekwing.http.common.interfaces.CallBack;
+import com.ekwing.http.okgoclient.OkGoWrapper;
+
+import java.util.HashMap;
+import java.util.concurrent.TimeUnit;
 
 public class MainActivity extends AppCompatActivity {
 
@@ -46,5 +57,49 @@ public class MainActivity extends AppCompatActivity {
             ActivityCompat.requestPermissions(this, new String[]{Manifest.permission.INTERNET}, 1);
         }
         webView.loadUrl("http://www.baidu.com");
+        TextView textView = findViewById(R.id.textView);
+        textView.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Config config = new Config.Builder()
+                        .connectTimeout(Config.DEFAULT_TIMEOUT, TimeUnit.SECONDS)
+                        .readTimeout(Config.DEFAULT_TIMEOUT, TimeUnit.SECONDS)
+                        .writeTimeout(Config.DEFAULT_TIMEOUT, TimeUnit.SECONDS)
+                        .setEnableDns(true) //启用自定DNS
+                        .setLogEnable(true) //开启日志
+                        .setEnableSkipHttps(true) //允许绕过证书验证
+                        .setRetryCount(Config.MAX_RETRY) //重试次数
+                        .build();
+                HttpProxy.getInstance().initClient(new OkGoWrapper(getApplication(), config));
+                HashMap<String, String> stringStringHashMap = new HashMap<>();
+                stringStringHashMap.put("id", "01");
+                HttpProxy.getInstance().get("http://www.baidu.com", "Hello", stringStringHashMap, false, new CallBack() {
+                    @Override
+                    public void onStart() {
+
+                    }
+
+                    @Override
+                    public void onSuccess(String result) {
+                        Toast.makeText(MainActivity.this, "请求成功" + result, Toast.LENGTH_SHORT).show();
+                    }
+
+                    @Override
+                    public void onCacheSuccess(String result) {
+
+                    }
+
+                    @Override
+                    public void onError(int code, Throwable throwable) {
+                        Toast.makeText(MainActivity.this, "请求失败" + code, Toast.LENGTH_SHORT).show();
+                    }
+
+                    @Override
+                    public void onFinish() {
+
+                    }
+                });
+            }
+        });
     }
 }

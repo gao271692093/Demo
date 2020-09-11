@@ -1,6 +1,7 @@
 package com.glg.headerintoplist1;
 
 import androidx.appcompat.app.AppCompatActivity;
+import androidx.recyclerview.widget.ItemTouchHelper;
 import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
 
@@ -38,6 +39,9 @@ public class MainActivity extends AppCompatActivity {
         GroupAdapter groupAdapter = new GroupAdapter(MainActivity.this, groups);
         recyclerView.setAdapter(groupAdapter);
         recyclerView.addItemDecoration(new MyDecoration(MainActivity.this, groups));
+
+        ItemTouchHelper itemTouchHelper = new ItemTouchHelper(new MyItemTouchHelperCallback(groupAdapter));
+        itemTouchHelper.attachToRecyclerView(recyclerView);
     }
 
     private void init(List<Group> groups) {

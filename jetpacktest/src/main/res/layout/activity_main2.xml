@@ -1,0 +1,61 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    tools:context=".MainActivity2">
+
+    <data>
+        <variable
+            name="user"
+            type="com.glg.jetpacktest.User" />
+        <variable
+            name="dog"
+            type="com.glg.jetpacktest.Dog" />
+        <import type="android.text.TextUtils" />
+    </data>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical">
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="@{user.userName}"
+            android:textSize="17sp" />
+
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text='@{TextUtils.isEmpty(user.userGender)? @string/None: user.userGender}'
+            android:textSize="17sp" />
+
+        <Button
+            android:id="@+id/button_change"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="改变数据"/>
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="@{dog.name}"
+            android:textSize="17sp" />
+
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text='@{TextUtils.isEmpty(dog.gender)? @string/None: dog.gender}'
+            android:textSize="17sp" />
+
+        <Button
+            android:id="@+id/button_change1"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="改变数据"/>
+    </LinearLayout>
+
+</layout>

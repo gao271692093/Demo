@@ -68,7 +68,7 @@ public class MainActivity extends AppCompatActivity implements GestureDetector.O
             return true;
         } else {
             viewFlipper.setInAnimation(animation[0]);
-            viewFlipper.setInAnimation(animation[4]);
+            viewFlipper.setInAnimation(animation[3]);
             viewFlipper.showPrevious();
             return true;
         }

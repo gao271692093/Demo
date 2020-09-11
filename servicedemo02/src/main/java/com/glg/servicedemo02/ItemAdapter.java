@@ -34,9 +34,9 @@ public class ItemAdapter extends RecyclerView.Adapter<ItemAdapter.ViewHolder> {
         holder.textView1.setText(item.getOne());
         holder.textView2.setText(item.getTwo());
         holder.textView3.setText(item.getThree());
-        holder.textView4.setText(item.getOne());
-        holder.textView5.setText(item.getTwo());
-        holder.textView6.setText(item.getThree());
+        holder.textView4.setText(item.getFour());
+        holder.textView5.setText(item.getFive());
+        holder.textView6.setText(item.getSix());
         holder.textView7.setText(item.getSeven());
         if(mOnItemClickListener!=null) {
             holder.itemView.setOnClickListener(new View.OnClickListener() {

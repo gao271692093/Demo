@@ -1,0 +1,309 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    app:layout_constraintBottom_toBottomOf="parent"
+    app:layout_constraintTop_toTopOf="parent"
+    app:layout_constraintLeft_toLeftOf="parent"
+    app:layout_constraintRight_toRightOf="parent"
+    tools:context=".MainActivity">
+
+    <TextView
+        android:id="@+id/text1"
+        android:layout_width="80dp"
+        android:layout_height="40dp"
+        android:gravity="center"
+        android:text="Hello World!"
+        tools:ignore="MissingConstraints" />
+
+    <TextView
+        android:id="@+id/text2"
+        android:layout_width="80dp"
+        android:layout_height="30dp"
+        android:text="相对定位"
+        app:layout_constraintLeft_toRightOf="@id/text1"
+        app:layout_constraintBaseline_toBaselineOf="@id/text1" />
+
+    <TextView
+        android:id="@+id/text3"
+        android:layout_width="80dp"
+        android:layout_height="40dp"
+        app:layout_constraintCircle="@id/text1"
+        app:layout_constraintCircleAngle="120"
+        app:layout_constraintCircleRadius="120dp"
+        android:text="角度定位"
+        tools:ignore="MissingConstraints" />
+
+    <TextView
+        android:id="@+id/text4"
+        android:layout_width="80dp"
+        android:layout_height="40dp"
+        android:layout_marginLeft="60dp"
+        android:layout_marginTop="80dp"
+        android:text="边距"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintTop_toTopOf="parent"/>
+    <!--直接使用margin属性是不起作用的，必须要为控件添加位置约束才行-->
+
+    <TextView
+        android:id="@+id/text5"
+        android:layout_width="80dp"
+        android:layout_height="40dp"
+        android:text="不可见"
+        android:visibility="gone"
+        tools:ignore="MissingConstraints" />
+
+    <TextView
+        android:id="@+id/text6"
+        android:layout_width="80dp"
+        android:layout_height="40dp"
+        app:layout_constraintLeft_toRightOf="@id/text5"
+        app:layout_goneMarginLeft="20dp"
+        app:layout_constraintTop_toTopOf="@id/text5"
+        app:layout_goneMarginTop="120dp"
+        android:text="goneMargin"
+        tools:ignore="MissingConstraints" />
+    <!--goneMargin只有当选择用来定位的控件不可见时才会生效-->
+
+    <TextView
+        android:id="@+id/text7"
+        android:layout_width="80dp"
+        android:layout_height="40dp"
+        android:text="居中"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintRight_toRightOf="parent"
+        android:layout_marginLeft="100dp"/>
+    <!--由于居中已经为控件约束了一个相对位置，所以可以使用margin-->
+
+    <TextView
+        android:id="@+id/text8"
+        android:layout_width="80dp"
+        android:layout_height="40dp"
+        android:text="偏移"
+        app:layout_constraintHorizontal_bias="0.3"
+        app:layout_constraintVertical_bias="0.6"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintRight_toRightOf="parent"/>
+    <!--偏移值为0到1,0表示偏移到屏幕最左或最上，1表示偏移到屏幕最右或最下-->
+
+    <!--尺寸约束可以使用指定的值，也可以使用wrap_content，使用wrap_content时可以指定最大和最小的宽度和高度-->
+    <!--官方不推荐使用match_parent，可以使用0dp和约束到父控件的左右或者上下来实现-->
+    <TextView
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:text="match_parent"
+        android:layout_marginLeft="50dp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintRight_toRightOf="parent"/>
+
+    <TextView
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:text="宽高比"
+        app:layout_constraintDimensionRatio="1:1"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintRight_toRightOf="parent"
+        tools:ignore="MissingConstraints" />
+    <!--使用宽高比的时候宽度和高度至少有一个为0dp，设置比例时可以在前面加上H或者W，分别表示高：宽和宽：高，例如：H,2:3-->
+
+    <!--两个或者两个以上的控件相互约束并且两端两个控件分别于父控件约束，可以认为他们共同组成了一条链-->
+    <!--为链头设置app:layout_constraintHorizontal_chainStyle可以为整条链设置样式-->
+    <!--chains提供了3种样式，分别是：
+        CHAIN_SPREAD —— 展开元素 (默认)；
+        CHAIN_SPREAD_INSIDE —— 展开元素，但链的两端贴近parent；
+        CHAIN_PACKED —— 链的元素将被打包在一起。-->
+    <TextView
+        android:id="@+id/text01"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        app:layout_constraintVertical_bias="0.3"
+        android:text="链头"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintRight_toLeftOf="@id/text02"
+        app:layout_constraintHorizontal_chainStyle="spread"/>
+
+    <TextView
+        android:id="@+id/text02"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        app:layout_constraintVertical_bias="0.3"
+        android:text="链元素"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintLeft_toRightOf="@id/text01"
+        app:layout_constraintRight_toLeftOf="@id/text03"/>
+
+    <TextView
+        android:id="@+id/text03"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        app:layout_constraintVertical_bias="0.3"
+        android:text="链尾"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintRight_toRightOf="parent"
+        app:layout_constraintLeft_toRightOf="@id/text02"/>
+
+    <!--权重链，将宽度都设置为0dp，并为其设置权重-->
+    <TextView
+        android:id="@+id/text04"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        app:layout_constraintVertical_bias="0.4"
+        android:text="链头"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintRight_toLeftOf="@id/text05"
+        app:layout_constraintHorizontal_weight="2"/>
+
+    <TextView
+        android:id="@+id/text05"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        app:layout_constraintVertical_bias="0.4"
+        android:text="链元素"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintLeft_toRightOf="@id/text04"
+        app:layout_constraintRight_toLeftOf="@id/text06"
+        app:layout_constraintHorizontal_weight="3"/>
+
+    <TextView
+        android:id="@+id/text06"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        app:layout_constraintVertical_bias="0.4"
+        android:text="链尾"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintRight_toRightOf="parent"
+        app:layout_constraintLeft_toRightOf="@id/text05"
+        app:layout_constraintHorizontal_weight="4"/>
+
+    <!--当我们使用 MATCH_CONSTRAINT 时，ConstraintLayout 将对控件进行 2 次测量，ConstraintLayout在1.1中可以通过设置 layout_optimizationLevel 进行优化，可设置的值有：
+        none：无优化
+        standard：仅优化直接约束和屏障约束（默认）
+        direct：优化直接约束
+        barrier：优化屏障约束
+        chain：优化链约束
+        dimensions：优化尺寸测量-->
+
+    <TextView
+        android:id="@+id/text07"
+        android:layout_width="80dp"
+        android:layout_height="wrap_content"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintVertical_bias="0.7"
+        android:text="reference1"
+        tools:ignore="MissingConstraints" />
+
+    <TextView
+        android:id="@+id/text08"
+        android:layout_width="60dp"
+        android:layout_height="wrap_content"
+        app:layout_constraintBottom_toTopOf="@id/text07"
+        android:text="reference2"
+        tools:ignore="MissingConstraints" />
+
+    <androidx.constraintlayout.widget.Barrier
+        android:id="@+id/barrier"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        app:barrierDirection="right"
+        app:constraint_referenced_ids="text07,text08"/>
+    <!--app:barrierDirection为屏障所在的位置，可设置的值有：bottom、end、left、right、start、top
+        app:constraint_referenced_ids为屏障引用的控件，可设置多个(用“,”隔开)-->
+
+    <TextView
+        android:id="@+id/text09"
+        android:layout_width="80dp"
+        android:layout_height="wrap_content"
+        android:text="BarrierRight"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintVertical_bias="0.7"
+        app:layout_constraintLeft_toRightOf="@id/barrier"/>
+
+    <TextView
+        android:id="@+id/text001"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintVertical_bias="0.8"
+        android:text="Text1 in Group"/>
+
+    <TextView
+        android:id="@+id/text002"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintVertical_bias="0.8"
+        app:layout_constraintLeft_toRightOf="@id/text001"
+        android:text="Text2 is visible"/>
+
+    <TextView
+        android:id="@+id/text003"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintVertical_bias="0.8"
+        app:layout_constraintLeft_toRightOf="@id/text002"
+        android:text="Text3 in Group"/>
+
+    <!--Group可以把多个控件归为一组，方便隐藏或显示一组控件-->
+    <androidx.constraintlayout.widget.Group
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:visibility="invisible"
+        app:constraint_referenced_ids="text001, text003"/>
+
+    <!--android:contentDescription这个属性的主要功能就是为视力有障碍的人增加对控件的解释，android系统会自动使用人声朗读控件上android:contentDescription属性说指向的内容-->
+    <!--Placeholder是占位符的意思，通过设置其content属性来将其他空间放置在该定位中-->
+    <androidx.constraintlayout.widget.Placeholder
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        app:content="@+id/text_in_placeholder"
+        app:layout_constraintRight_toRightOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintVertical_bias="0.7"/>
+
+    <TextView
+        android:id="@+id/text_in_placeholder"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Text in placeholder"
+        app:layout_constraintVertical_bias="0.9"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintRight_toRightOf="parent"/>
+
+    <!--Guideline相当于一个辅助线，不会显示在界面上，在预览的时候可以帮助我们完成布局-->
+    <androidx.constraintlayout.widget.Guideline
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        app:layout_constraintGuide_begin="50dp"/>
+
+    <androidx.constraintlayout.widget.Guideline
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        app:layout_constraintGuide_percent="0.5"/>
+
+</androidx.constraintlayout.widget.ConstraintLayout>

@@ -52,6 +52,7 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
                             .setContentTitle("Title")
                             .setContentText("Learn how to build notifications, send and sync dta, and use voice actions. Get the official Android IDE and developer tools to build apps for  Android.")
                             .setStyle(new Notification.BigTextStyle().bigText("Learn how to build notifications, send and sync dta, and use voice actions. Get the official Android IDE and developer tools to build apps for  Android."))
+                            .setStyle(new Notification.BigPictureStyle().bigPicture(BitmapFactory.decodeResource(getResources(), R.drawable.art01)))
                             .setSmallIcon(R.mipmap.ic_launcher)
                             .setLargeIcon(BitmapFactory.decodeResource(getResources(), R.mipmap.ic_launcher))
                             .setContentIntent(pendingIntent)

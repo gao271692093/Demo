@@ -12,13 +12,14 @@ import androidx.annotation.NonNull;
 import androidx.annotation.RequiresApi;
 import androidx.recyclerview.widget.RecyclerView;
 
+import java.util.Collections;
 import java.util.List;
 
 /**
  * Created by gao on 2020/7/27 16:12.
  * Function:
  */
-class GroupAdapter extends RecyclerView.Adapter<GroupAdapter.ViewHolder> {
+class GroupAdapter extends RecyclerView.Adapter<GroupAdapter.ViewHolder> implements ItemTouchStatus {
 
     private Context context;
 
@@ -47,6 +48,20 @@ class GroupAdapter extends RecyclerView.Adapter<GroupAdapter.ViewHolder> {
     @Override
     public int getItemCount() {
         return groupList.size();
+    }
+
+    @Override
+    public boolean onItemMove(int fromPosition, int toPosition) {
+        Collections.swap(groupList, fromPosition, toPosition);
+        notifyItemMoved(fromPosition, toPosition);
+        return true;
+    }
+
+    @Override
+    public boolean onItemRemove(int position) {
+        groupList.remove(position);
+        notifyItemRemoved(position);
+        return true;
     }
 
     static class ViewHolder extends RecyclerView.ViewHolder {

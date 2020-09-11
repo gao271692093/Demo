@@ -6,6 +6,7 @@ import android.content.Context;
 import android.content.pm.PackageManager;
 import android.graphics.Bitmap;
 import android.graphics.BitmapFactory;
+import android.graphics.Camera;
 import android.graphics.Canvas;
 import android.graphics.Matrix;
 import android.graphics.Paint;
@@ -46,10 +47,6 @@ public class MyView extends View {
             ((Activity)context).requestPermissions(new String[]{Manifest.permission.CAMERA}, 1);
         }
         File file = new File("/storage/self/primary/beautiful.jpg");
-//        while(file.exists() == false) {
-//            Log.i(TAG, "onDraw: ====> file.exists()" + file.exists());
-//            file = new File("/storage/self/primary/beautiful.jpg");
-//        }
 
 
         Bitmap bitmap = BitmapFactory.decodeFile(file.getAbsolutePath());
@@ -129,6 +126,18 @@ public class MyView extends View {
         Matrix matrix = new Matrix();
         canvas.setMatrix(matrix);//放弃掉canvas的变化，使用matrix的变换
         canvas.concat(matrix);//将matrix的变换和canvas的变化叠加
+        canvas.restore();
+
+        //camera旋转实现的旋转效果：沿X轴顺时针旋转、沿Y轴按右手方向、沿Z轴也是右手方向
+        canvas.save();
+        Camera camera = new Camera();
+        camera.save();
+        canvas.translate(bitmap.getWidth(), bitmap.getHeight() + 1100);
+        camera.rotateX(30);
+        camera.applyToCanvas(canvas);
+        canvas.translate(-bitmap.getWidth(), -bitmap.getHeight()-1100);
+        camera.restore();
+        canvas.drawBitmap(bitmap, 0, 1100, paint);
         canvas.restore();
     }
 }

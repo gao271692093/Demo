@@ -1,0 +1,47 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+
+    <!--使用roundPercent属性实现圆形图片，取值为0到1-->
+    <androidx.constraintlayout.utils.widget.ImageFilterButton
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="100dp"
+        app:roundPercent="1"
+        android:src="@mipmap/ic_launcher"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintRight_toRightOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <!--使用round属性实现圆形图片-->
+    <androidx.constraintlayout.utils.widget.ImageFilterButton
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="200dp"
+        android:src="@mipmap/ic_launcher"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintRight_toRightOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:round="50dp" />
+
+    <!--默认情况下，crossfade=0，altSrc所引用的资源不可见,取值在0-1-->
+    <androidx.constraintlayout.utils.widget.ImageFilterButton
+        android:id="@+id/ivImage"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="300dp"
+        android:src="@mipmap/ic_launcher"
+        app:altSrc="@drawable/settings"
+        app:crossfade="0.5"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintRight_toRightOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:round="50dp" />
+    <!--warmth色温：1=neutral自然, 2=warm暖色, 0.5=cold冷色
+    brightness亮度：0 = black暗色, 1 = original原始, 2 = twice as bright两倍亮度
+    saturation饱和度：0 = grayscale灰色, 1 = original原始, 2 = hyper saturated超饱和
+    contrast对比：1 = unchanged原始, 0 = gray暗淡, 2 = high contrast高对比-->
+
+</androidx.constraintlayout.widget.ConstraintLayout>

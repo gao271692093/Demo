@@ -1,0 +1,61 @@
+<?xml version="1.0" encoding="utf-8"?>
+<MotionScene xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    app:defaultDuration="2000">
+    <!--app:defaultDuration属性是指定所有未指定时间的动画的默认动画时间，默认是300毫秒-->
+
+    <ConstraintSet android:id="@+id/start">
+        <Constraint
+            android:id="@+id/vStartStatus"
+            android:layout_width="50dp"
+            android:layout_height="50dp"
+            android:layout_marginTop="50dp"
+            app:layout_constraintLeft_toLeftOf="parent"
+            app:layout_constraintRight_toRightOf="parent"
+            app:layout_constraintTop_toTopOf="parent">
+        </Constraint>
+    </ConstraintSet>
+
+    <ConstraintSet android:id="@+id/end">
+        <Constraint
+            android:id="@id/vStartStatus"
+            android:layout_width="100dp"
+            android:layout_height="100dp"
+            android:layout_marginBottom="50dp"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintLeft_toLeftOf="parent"
+            app:layout_constraintRight_toRightOf="parent">
+        </Constraint>
+    </ConstraintSet>
+
+    <Transition
+        app:constraintSetEnd="@id/end"
+        app:constraintSetStart="@+id/start">
+        <!--<KeyFrameSet>
+            <KeyPosition
+                app:percentY="0.5"
+                app:framePosition="50"
+                app:motionTarget="@id/vStartStatus"
+                app:keyPositionType="parentRelative"
+                app:percentX="0.25" />
+        </KeyFrameSet>-->
+        <!--将keyPositionType属性改为deltaRelative,即坐标系选择参照整个过渡动画的位置，那么起始状态的位置就是原点（0,0），结束状态的位置就是终点（1,1）。
+            这里由于原点和终点在x轴上的距离是0，所以percentX="0.25"是没有效果的。-->
+        <KeyFrameSet>
+            <KeyPosition
+                app:framePosition="50"
+                app:percentX="0.5"
+                app:percentY="0.1"
+                app:percentWidth="2"
+                app:percentHeight="2"
+                app:keyPositionType="pathRelative"
+                app:motionTarget="@id/vStartStatus" />
+        </KeyFrameSet>
+        <!--将keyPositionType属性改为pathRelative,即坐标系选择参照整个运动路径，即起始和终点的直线距离构成X轴，此时y轴就有正负之分，表示在X轴的左边还是右边。x轴和y轴的长度都是等于路径的长度。-->
+        <!--percentWidth和percentHeight属性表示视图自身大小，如果整个动画过程中，视图大小不存在变化，是没有效果的。-->
+        <OnClick
+            app:clickAction="toggle"
+            app:targetId="@id/vStartStatus" />
+    </Transition>
+    <!--clickAction属性值为toggle表示重复点击时，动画重复效果-->
+</MotionScene>

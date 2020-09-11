@@ -1,0 +1,98 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:scrollbars="vertical">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:orientation="vertical">
+
+
+        <Button
+            android:id="@+id/get_sd_path"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="获取sd卡根路径" />
+
+
+        <Button
+            android:id="@+id/get_file_suffix"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="获取文件后缀名" />
+
+        <Button
+            android:id="@+id/get_file_mime"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="获取文件MIME类型" />
+
+
+        <Button
+            android:id="@+id/create_file"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="创建文件" />
+
+        <Button
+            android:id="@+id/create_dir"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="创建目录" />
+
+
+        <Button
+            android:id="@+id/delete_specific_file"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="删除指定文件（单个）" />
+
+
+        <Button
+            android:id="@+id/delete_all_for_dir"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="删除某一目录下的所有文件(包括此目录)" />
+
+
+        <Button
+            android:id="@+id/copy_file"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="复制文件" />
+
+        <Button
+            android:id="@+id/copy_dir"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="复制目录" />
+
+        <Button
+            android:id="@+id/rename_file"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="文件重命名" />
+
+
+        <Button
+            android:id="@+id/format_file_size"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="计算某个文件大小，并格式化" />
+
+        <Button
+            android:id="@+id/format_dir_size"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="计算某个目录大小，并格式化" />
+
+
+        <Button
+            android:id="@+id/get_file_list"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="获取某个路径下的文件列表" />
+    </LinearLayout>
+</ScrollView>
